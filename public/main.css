@@ -16,6 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   transition: height 1s, top 1s;
+  z-index: -1;
 }
 
 .bes.bom {
