@@ -104,22 +104,18 @@ function bitir() {
   document.querySelector(".bes").classList.add("bom");
   document.querySelector(".allahuakbar").classList.add("bom");
   document.querySelector(".bes > h1").innerHTML = `<span style="color: rgb(calc(24 * 2), calc(28 * 2), calc(41 * 2)); cursor: pointer;" onclick="localStorage.removeItem('patladimi'); location.reload();">Ampulu Geri Tak 💡</span>`;
-
-const n = new (window.AudioContext || window.webkitAudioContext)();
-navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
-const e = n.createBufferSource();
-  e.loop = true;
-  sourcee = e;
-const t = new XMLHttpRequest();
-  t.open("GET", "https://cdn.discordapp.com/attachments/1133423173367504958/1134150686653825124/mars.mp3", true);
-  t.responseType = "arraybuffer";
-t.onload = function() {
- n.decodeAudioData(t.response, function(buffer) {
-  e.buffer = buffer;
-  e.connect(n.destination);
-  e.start();
-}, (error) => console.error("Ses verisini çözme hatası: " + error.message));
+let calistimi = false;
+  
+try {
+  audio.currentTime = 0;
+  audio.src = "https://cdn.discordapp.com/attachments/1133423173367504958/1134150686653825124/mars.mp3";
+  audio.play();
+  calistimi = true;
+} catch (err) { console.error("Calismadi", err); };
+document.onclick = function() {
+  if(calistimi) return;
+  audio.currentTime = 0;
+  audio.src = "https://cdn.discordapp.com/attachments/1133423173367504958/1134150686653825124/mars.mp3";
+  audio.play();
 };
-  t.send();
-}).catch(error => console.error(`Ses izni reddedildi: ${error}`));
 };
