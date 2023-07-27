@@ -105,15 +105,10 @@ function bitir() {
   document.querySelector(".allahuakbar").classList.add("bom");
   document.querySelector(".bes > h1").innerHTML = `<span style="color: rgb(calc(24 * 2), calc(28 * 2), calc(41 * 2)); cursor: pointer;" onclick="localStorage.removeItem('patladimi'); location.reload();">Ampulu Geri Tak 💡</span>`;
 let calistimi = false;
-  
-try {
-  audio.currentTime = 0;
-  audio.src = "https://cdn.discordapp.com/attachments/1133423173367504958/1134150686653825124/mars.mp3";
-  audio.play();
-  calistimi = true;
-} catch (err) { console.error("Calismadi", err); };
 document.onclick = function() {
+  console.log("31");
   if(calistimi) return;
+  calistimi = true;
   audio.currentTime = 0;
   audio.src = "https://cdn.discordapp.com/attachments/1133423173367504958/1134150686653825124/mars.mp3";
   audio.play();
