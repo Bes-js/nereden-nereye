@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: rgb(24, 28, 41) !important;
+  color: rgb(calc(24 * 1.2), calc(28 * 1.2), calc(41 * 1.2));
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body.on {
+  background: radial-gradient(#4a4d57, #181c29) !important;
+  color: #ccc;
+}
+
+.bulb2 {
+  position: fixed;
+  left: 50%;
+  top: calc(10vh + 50px);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  transform: translate(-50%, 0);
+}
+
+.bulb {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  border-radius: 50%;
+}
+
+.bulb:not(.kirildi) {
+  background: #444;
+}
+
+.bulb::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 22.5px;
+  width: 35px;
+  height: 80px;
+  border-top: 30px solid #000;
+  border-radius: 10px;
+}
+
+.bulb:not(.kirildi)::before {
+  background: #444;
+}
+
+body.on .bulb::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+.bulb:not(.kirildi) span:nth-child(1) {
+  position: absolute;
+  top: -16px;
+  left: -4px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  transform: rotate(342deg);
+  border-bottom-right-radius: 40px;
+  box-shadow: 20px 20px 0 10px #444;
+}
+
+.bulb:not(.kirildi) span:nth-child(2) {
+  position: absolute;
+  top: -16px;
+  right: -4px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  transform: rotate(17deg);
+  border-bottom-left-radius: 40px;
+  box-shadow: -20px 20px 0 10px #444;
+}
+
+.wire {
+  position: absolute;
+  left: calc(50% - 2px);
+  top: 0;
+  width: 4px;
+  height: 10vh;
+  background: #000;
+  z-index: -1;
+}
+
+.switch {
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+  width: 80px;
+  height: 80px;
+  background: #cbd5e1;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch .btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 6px;
+  margin-top: -20px;
+  cursor: pointer;
+}
+
+.switch .btn.click {
+  margin-top: unset;
+  margin-bottom: -20px; 
+}
+
+.switch .btn.disabled {
+  cursor: not-allowed !important;
+}
+
+#audio {
+  display: none;
+}
+
+#veya.disabled {
+  cursor: not-allowed !important;
+}

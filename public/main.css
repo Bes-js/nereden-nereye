@@ -10,11 +10,59 @@ body {
 
 .bes {
   position: fixed;
-  background: #181c29;
-  color: #fff;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: height 1s, top 1s;
+}
+
+.bes.bom {
+  color: rgb(calc(24 * 2), calc(28 * 2), calc(41 * 2));
+  height: 70% !important;
+  top: 0;
+}
+
+.allahuakbar {
+  position: fixed;
+  left: 50%;
+  bottom: -100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  transition: bottom 1s;
+}
+
+.allahuakbar.bom {
+  bottom: calc(-25% - 30px);
+}
+
+@keyframes meraba {
+0% {
+  transform: rotate(0);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+
+@keyframes salla {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(5px, 5px) rotate(5deg); }
+  20% { transform: translate(0, 0) rotate(0deg); }
+  30% { transform: translate(-5px, -5px) rotate(-5deg); }
+  40% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(5px, 5px) rotate(5deg); }
+  60% { transform: translate(0, 0) rotate(0deg); }
+  70% { transform: translate(-5px, -5px) rotate(-5deg); }
+  80% { transform: translate(0, 0) rotate(0deg); }
+  90% { transform: translate(5px, 5px) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.allahuakbar.bom > img {
+  animation: meraba 1s linear 0s, salla 2s linear 1s;
+  user-select: none;
 }
