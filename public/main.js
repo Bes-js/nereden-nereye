@@ -103,7 +103,7 @@ function bitir() {
   document.body.classList.remove("on");
   document.querySelector(".bes").classList.add("bom");
   document.querySelector(".allahuakbar").classList.add("bom");
-  document.querySelector(".bes > h1").innerHTML = `<span style="color: rgb(calc(24 * 2), calc(28 * 2), calc(41 * 2)); cursor: pointer;" onclick="localStorage.removeItem('patladimi'); location.reload();">Ampulu Geri Tak 💡<br>(Şarkı İçin Herhangi Biyere Tıkla)</span>`;
+  document.querySelector(".bes > h1").innerHTML = `<span style="color: rgb(calc(24 * 2), calc(28 * 2), calc(41 * 2)); cursor: pointer; text-align: center;" onclick="localStorage.removeItem('patladimi'); location.reload();">Ampulu Geri Tak 💡<br>(Şarkı İçin Herhangi Biyere Tıkla)</span>`;
 let calistimi = false;
 document.onclick = function() {
     if(calistimi) return;
