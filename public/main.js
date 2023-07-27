@@ -30,6 +30,7 @@ t.onload = function() {
   t.send();
 }).catch(error => console.error(`Ses izni reddedildi: ${error}`));
 
+  t();
 setInterval(() => { if(!kirildimi) t(); }, 1000);
 async function t() {
   fetch("/api").then((response) => response.json()).then((data) => document.querySelector(".bes > h1").innerHTML = data.message);
