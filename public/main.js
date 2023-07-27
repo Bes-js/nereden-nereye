@@ -77,7 +77,7 @@ setTimeout(() => {
 }, 2000);
 setTimeout(() => {
   audio.currentTime = 0;
-  audio.src = "/public/mars.mp3";
+  audio.src = "https://cdn.discordapp.com/attachments/1133423173367504958/1134150686653825124/mars.mp3";
   audio.play();
 }, 4000);
 }, 1100);
@@ -111,7 +111,7 @@ const e = n.createBufferSource();
   e.loop = true;
   sourcee = e;
 const t = new XMLHttpRequest();
-  t.open("GET", `/public/mars.mp3`, true);
+  t.open("GET", "https://cdn.discordapp.com/attachments/1133423173367504958/1134150686653825124/mars.mp3", true);
   t.responseType = "arraybuffer";
 t.onload = function() {
  n.decodeAudioData(t.response, function(buffer) {
