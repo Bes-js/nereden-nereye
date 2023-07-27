@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: rgb(24, 28, 41) !important;
+  color: rgb(calc(24 * 1.2), calc(28 * 1.2), calc(41 * 1.2));
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+body.on {
+  background: radial-gradient(#4a4d57, #181c29) !important;
+  color: #ccc;
+}
+
+.bes {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height 1s, top 1s;
+}
+
+.bes.bom {
+  color: rgb(calc(24 * 2), calc(28 * 2), calc(41 * 2));
+  height: 70% !important;
+  top: 0;
+}
+
+.allahuakbar {
+  position: fixed;
+  left: 50%;
+  bottom: -100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  transition: bottom 1s;
+}
+
+.allahuakbar.bom {
+  bottom: calc(-25% - 30px);
+}
+
+@keyframes meraba {
+0% {
+  transform: rotate(0);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+
+@keyframes salla {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(5px, 5px) rotate(5deg); }
+  20% { transform: translate(0, 0) rotate(0deg); }
+  30% { transform: translate(-5px, -5px) rotate(-5deg); }
+  40% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(5px, 5px) rotate(5deg); }
+  60% { transform: translate(0, 0) rotate(0deg); }
+  70% { transform: translate(-5px, -5px) rotate(-5deg); }
+  80% { transform: translate(0, 0) rotate(0deg); }
+  90% { transform: translate(5px, 5px) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.allahuakbar.bom > img {
+  animation: meraba 1s linear 0s, salla 2s linear 1s;
+  user-select: none;
+}
+
+.bulb2 {
+  position: fixed;
+  left: 50%;
+  top: calc(10vh + 50px);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  transform: translate(-50%, 0);
+}
+
+.bulb {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  border-radius: 50%;
+}
+
+.bulb:not(.kirildi) {
+  background: #444;
+}
+
+.bulb::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 22.5px;
+  width: 35px;
+  height: 80px;
+  border-top: 30px solid #000;
+  border-radius: 10px;
+}
+
+.bulb:not(.kirildi)::before {
+  background: #444;
+}
+
+body.on .bulb::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+.bulb:not(.kirildi) span:nth-child(1) {
+  position: absolute;
+  top: -16px;
+  left: -4px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  transform: rotate(342deg);
+  border-bottom-right-radius: 40px;
+  box-shadow: 20px 20px 0 10px #444;
+}
+
+.bulb:not(.kirildi) span:nth-child(2) {
+  position: absolute;
+  top: -16px;
+  right: -4px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  transform: rotate(17deg);
+  border-bottom-left-radius: 40px;
+  box-shadow: -20px 20px 0 10px #444;
+}
+
+.wire {
+  position: absolute;
+  left: calc(50% - 2px);
+  top: 0;
+  width: 4px;
+  height: 10vh;
+  background: #000;
+  z-index: -1;
+}
+
+.switch {
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+  width: 80px;
+  height: 80px;
+  background: #cbd5e1;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch .btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 6px;
+  margin-top: -20px;
+  cursor: pointer;
+}
+
+.switch .btn.click {
+  margin-top: unset;
+  margin-bottom: -20px; 
+}
+
+.switch .btn.disabled {
+  cursor: not-allowed !important;
+}
+
+#audio {
+  display: none;
+}
+
+#veya.disabled {
+  cursor: not-allowed !important;
+}
