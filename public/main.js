@@ -51,7 +51,7 @@ const now = Date.now();
   count++;
   lastClickTime = now;
 
-if(count > 8) {
+if(count > 6) {
   kirildimi = true;
   localStorage.setItem("patladimi", "bom");
   document.querySelector(".bulb").classList.add("kirildi");
@@ -79,7 +79,7 @@ setTimeout(() => {
   audio.currentTime = 0;
   audio.src = "https://cdn.discordapp.com/attachments/1133423173367504958/1134150686653825124/mars.mp3";
   audio.play();
-}, 4000);
+}, 3250);
 }, 1100);
 } catch (err) {
   console.error(err)
@@ -103,11 +103,10 @@ function bitir() {
   document.body.classList.remove("on");
   document.querySelector(".bes").classList.add("bom");
   document.querySelector(".allahuakbar").classList.add("bom");
-  document.querySelector(".bes > h1").innerHTML = `<span style="color: rgb(calc(24 * 2), calc(28 * 2), calc(41 * 2)); cursor: pointer;" onclick="localStorage.removeItem('patladimi'); location.reload();">Ampulu Geri Tak 💡</span>`;
+  document.querySelector(".bes > h1").innerHTML = `<span style="color: rgb(calc(24 * 2), calc(28 * 2), calc(41 * 2)); cursor: pointer;" onclick="localStorage.removeItem('patladimi'); location.reload();">Ampulu Geri Tak 💡<br>(Şarkı İçin Herhangi Biyere Tıkla)</span>`;
 let calistimi = false;
 document.onclick = function() {
-  console.log("31");
-  if(calistimi) return;
+    if(calistimi) return;
   calistimi = true;
   audio.currentTime = 0;
   audio.src = "https://cdn.discordapp.com/attachments/1133423173367504958/1134150686653825124/mars.mp3";
