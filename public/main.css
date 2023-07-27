@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  user-select: none;
 }
 
 body {
@@ -81,7 +82,6 @@ body.on {
 
 .allahuakbar.bom > img {
   animation: meraba 1s linear 0s, salla 2s linear 1s;
-  user-select: none;
 }
 
 .bulb2 {
